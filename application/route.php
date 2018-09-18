@@ -9,13 +9,10 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
+use think\Route;
 
-];
+//Route::rule('hello', 'sample/Test/hello', 'GET|POST', ['https'=>false]);
+Route::get('hello1/:id', 'sample/test/hello1');
+Route::post('hello2/:id', 'sample/test/hello2');
+Route::get('hello/:id', 'sample/test/hello');
+Route::post('hello/:id', 'sample/test/hello');
