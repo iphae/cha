@@ -11,8 +11,13 @@
 
 use think\Route;
 
-//Route::rule('hello', 'sample/Test/hello', 'GET|POST', ['https'=>false]);
-Route::get('hello1/:id', 'sample/test/hello1');
-Route::post('hello2/:id', 'sample/test/hello2');
-Route::get('hello/:id', 'sample/test/hello');
-Route::post('hello/:id', 'sample/test/hello');
+//Route::rule('hello', 'api/Test/hello', 'GET|POST', ['https'=>false]);
+//Route::get('hello1/:id', 'api/test/hello1');
+//Route::post('hello2/:id', 'api/test/hello2');
+//Route::get('hello/:id', 'api/test/hello');
+//Route::post('hello/:id', 'api/test/hello');
+//
+Route::post('hello_v1/:id', 'api/v1.Test/hello');
+
+
+Route::get('banner/:id', 'api/v1.Banner/getBanner');
