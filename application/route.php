@@ -20,4 +20,4 @@ use think\Route;
 Route::post('hello_v1/:id', 'api/v1.Test/hello');
 
 
-Route::get('banner/:id', 'api/v1.Banner/getBanner');
+Route::get('api/v1/banner/:id', 'api/v1.Banner/getBanner');

@@ -10,6 +10,9 @@ namespace app\api\controller\v1;
 
 
 use app\api\validate\IDMustBePostiveInt;
+use app\api\model\Banner as BannerModel;
+use app\lib\exception\MissException;
+use think\Exception;
 
 class Banner
 {
@@ -21,7 +24,12 @@ class Banner
      * @throws \think\Exception
      */
     public function getBanner($id) {
-        $validate = new IDMustBePostiveInt();
-        $validate->goCheck();
+        (new IDMustBePostiveInt())->goCheck();
+
+        $banner = BannerModel::getBannerById($id);
+        if (!$banner) {
+            throw new MissException();
+        }
+        return json($banner);
     }
 }
